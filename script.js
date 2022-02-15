@@ -3,11 +3,8 @@
 
 function transformDate (defaultValue) {
     const date = new Date(defaultValue);
-    let birthDD = date.getDate();
-    let birthMM = date.getMonth()+1;
-    let birthYYYY = date.getFullYear();
     const inTwoDigits = (value) => value < 10 ? `0${value}` : value;
-    return `${inTwoDigits(birthDD)}.${inTwoDigits(birthMM)}.${birthYYYY}`;
+    return `${inTwoDigits(date.getDate())}.${inTwoDigits(date.getMonth()+1)}.${date.getFullYear()}`;
 }
 
 console.log(transformDate("1995-10-05"));
