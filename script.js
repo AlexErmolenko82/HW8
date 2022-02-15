@@ -2,14 +2,12 @@
 //1. Создайте объект Date для даты своего рождения(например 20 февраля 1995 года). Используя методы даты сформировать строку следующего вида - “20.02.1995”
 
 function transformDate (defaultValue) {
-const date = new Date(defaultValue);
-let result;
-let birthDD = date.getDate();
-let birthMM = date.getMonth()+1;
-let birthYYYY = date.getFullYear();
-birthDD < 10 ? birthDD = `0${birthDD}` : true;
-birthMM < 10 ? birthMM = `0${birthMM}` : true;
-return result = `${birthDD}.${birthMM}.${birthYYYY}`;
+    const date = new Date(defaultValue);
+    let birthDD = date.getDate();
+    let birthMM = date.getMonth()+1;
+    let birthYYYY = date.getFullYear();
+    const inTwoDigits = (value) => value < 10 ? `0${value}` : value;
+    return `${inTwoDigits(birthDD)}.${inTwoDigits(birthMM)}.${birthYYYY}`;
 }
 
 console.log(transformDate("1995-10-05"));
