@@ -1,14 +1,22 @@
 ﻿"use strict"
 //1. Создайте объект Date для даты своего рождения(например 20 февраля 1995 года). Используя методы даты сформировать строку следующего вида - “20.02.1995”
 
-const date = new Date('1982-01-09');
+function transformDate (defaultValue) {
+const date = new Date(defaultValue);
+let result;
 let birthDD = date.getDate();
 let birthMM = date.getMonth()+1;
 let birthYYYY = date.getFullYear();
 birthDD < 10 ? birthDD = `0${birthDD}` : true;
 birthMM < 10 ? birthMM = `0${birthMM}` : true;
-let birthDate = `${birthDD}.${birthMM}.${birthYYYY}`;
-console.log(birthDate);
+return result = `${birthDD}.${birthMM}.${birthYYYY}`;
+}
+
+console.log(transformDate("1995-10-05"));
+console.log(transformDate("1982-10-20"));
+console.log(transformDate("1982-01-01"));
+console.log(transformDate("1982-09-20"));
+
 
 //2. Напишите функции getDiffDays , которая будет принимать 2 даты (дата начала и дата окончания) и возвращать кол-во дней которое прошло между этими датами.
 //Если пользователь передал невалидную дату - вывести ошибку в консоль и остановить выполнение функции
